@@ -35,6 +35,19 @@ h1 {
   line-height: 1.1;
 }
 
+h3, h4 {
+  text-align: center;
+}
+
+.attribute {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#attribute-text {
+  text-transform: capitalize;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -46,12 +59,28 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+
+#puppy-name {
+  text-transform: capitalize;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+#container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#container > div {
+  display: flex;
+}
+
+#navbar {
+  padding: 2em;
+  justify-content: space-evenly;
+}
+
+img {
+  max-height: 250px;
+  max-width: 300px;
 }
 
 @media (prefers-color-scheme: light) {
