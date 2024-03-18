@@ -18,7 +18,7 @@ export default function AllPlayers(){
      return <div>
                 {
                 players.map((player)=>{
-                    return <div key={player}>
+                    return <div key={player.id}>
                         <img src= {player.imageUrl} />
                         <h4 id="puppy-name">
                             {player.name}
