@@ -25,8 +25,12 @@ export async function addNewPlayer(puppyStats){
         body: JSON.stringify(puppyStats),
         });
         const result = await response.json();
-        console.log("Puppy added successfully!", result);
-        return result.data.player;
+        if (result.success){
+            console.log("Puppy added successfully!", result);
+            return result.data.player;
+        } else {
+            console.log("Please try again.")
+        }
     } catch(error) {
         console.error(error);
     }
@@ -39,7 +43,9 @@ export async function deletePlayer(playerId){
         method: "DELETE",
     });
     const result = response.json();
-    console.log("Puppy deleted successfully!", result);
+    if (result.success){
+        console.log("Puppy deleted successfully!", result);
+    }
     } catch(error) {
         console.error("Sorry, didn't delete.", error);
     }
