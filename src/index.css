@@ -67,11 +67,12 @@ button {
 #container {
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
 }
 #container > div {
   display: flex;
 }
+
 
 #navbar {
   padding: 2em;
