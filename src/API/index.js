@@ -15,7 +15,8 @@ export async function getCurrentPlayerById(playerId) {
 
 export async function addNewPlayer(puppyStats){
    
-    try {const response = await fetch(`${API_URL}`,
+    try {
+        const response = await fetch(`${API_URL}`,
     {
         method: "POST",
         headers: {
@@ -24,9 +25,23 @@ export async function addNewPlayer(puppyStats){
         body: JSON.stringify(puppyStats),
         });
         const result = await response.json();
-        console.log(result.data.player);
+        console.log("Puppy added successfully!", result);
         return result.data.player;
     } catch(error) {
         console.error(error);
     }
-} 
+}
+
+export async function deletePlayer(playerId){
+    try {
+         const response = await fetch(`${API_URL}/${playerId}`,
+    {
+        method: "DELETE",
+    });
+    const result = response.json();
+    console.log("Puppy deleted successfully!", result);
+    } catch(error) {
+        console.error("Sorry, didn't delete.", error);
+    }
+
+}

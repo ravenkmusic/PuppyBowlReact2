@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {getCurrentPlayerById} from '../API/index';
+import {getCurrentPlayerById, deletePlayer } from '../API/index';
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function SinglePlayer(){
@@ -20,6 +20,11 @@ export default function SinglePlayer(){
         }
         getCurrentPlayer();
     }, [id]);
+
+    async function deleter(currentPuppy){
+        await deletePlayer(currentPuppy);
+        navigate("/");
+    }
 
     return <>
                 <img src= {player.imageUrl} />
@@ -43,7 +48,7 @@ export default function SinglePlayer(){
                         <span id="attribute-text"> {player.teamId}</span>
                     </p>
                         <button onClick={
-                            ()=> navigate('/')}>
+                            ()=> deleter(player.id)}>
                                 Delete Puppy
                         </button>
         </>

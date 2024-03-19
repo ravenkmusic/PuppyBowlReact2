@@ -17,7 +17,7 @@ export default function NewPlayerForm(){
             const player = {
                 name: newPuppyName,
                 breed: newPuppyBreed,
-                status: newPuppyStatus,
+                status: newPuppyStatus.toLowerCase(),
                 imageUrl: newPuppyImage,
             }
             await addNewPlayer(player);
@@ -46,7 +46,7 @@ export default function NewPlayerForm(){
                 setNewPuppyBreed(event.target.value)} />
             </label>
             <label htmlFor="status">Puppy Status:
-                <input type="text" 
+                <input type="enum" 
                 value= {newPuppyStatus}
                 placeholder="'Field' or 'bench'?"
                 onChange={(event) =>
