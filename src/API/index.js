@@ -13,23 +13,15 @@ export async function getCurrentPlayerById(playerId) {
     return result.data.player;
 }
 
-/*export async function addNewPlayer(playerId){
-    try {
-        const response = await fetch(`${API_URL}/${playerId}`,
-        {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: //name field value from form
-                breed: breed field from form value
-                status: // status field value from form
-            }),
+export async function addNewPlayer(puppyStats){
+    const response = await fetch(`${API_URL}`,
+    {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(puppyStats),
         });
         const result = await response.json();
-        console.log(result.data.player);
-    } catch (error) {
-        console.error(error)
-    }
-} */
+        return result;
+} 
