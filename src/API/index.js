@@ -14,7 +14,8 @@ export async function getCurrentPlayerById(playerId) {
 }
 
 export async function addNewPlayer(puppyStats){
-    const response = await fetch(`${API_URL}`,
+   
+    try {const response = await fetch(`${API_URL}`,
     {
         method: "POST",
         headers: {
@@ -23,5 +24,9 @@ export async function addNewPlayer(puppyStats){
         body: JSON.stringify(puppyStats),
         });
         const result = await response.json();
-        return result;
+        console.log(result.data.player);
+        return result.data.player;
+    } catch(error) {
+        console.error(error);
+    }
 } 
