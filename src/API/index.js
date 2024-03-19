@@ -13,7 +13,7 @@ export async function getCurrentPlayerById(playerId) {
     return result.data.player;
 }
 
-export async function addNewPlayer(playerId){
+/*export async function addNewPlayer(playerId){
     try {
         const response = await fetch(`${API_URL}/${playerId}`,
         {
@@ -23,7 +23,7 @@ export async function addNewPlayer(playerId){
             },
             body: JSON.stringify({
                 name: //name field value from form
-                breed: //breed field from form value
+                breed: breed field from form value
                 status: // status field value from form
             }),
         });
@@ -32,4 +32,4 @@ export async function addNewPlayer(playerId){
     } catch (error) {
         console.error(error)
     }
-}
+} */
